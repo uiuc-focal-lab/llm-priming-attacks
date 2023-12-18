@@ -42,8 +42,18 @@ def main(
 
             prompts.append(prompt)
             prefixes.append(prefix)
+            
+    dialogs = []
 
-    dialogs = ["User: "+ b +"\nAssistant: " + prefixes[i] for i, b in enumerate(prompts)]
+    for prompt, prefix in zip(prompts, prefixes):
+        dialog = "USER: " + prompt + " ASSISTANT:"
+
+        if len(prefix) > 0:
+            dialog += " "
+
+        dialog += prefix
+
+        dialogs.append(dialog)
 
     num_batches = len(dialogs) // batch_size
 
@@ -55,7 +65,7 @@ def main(
 
         for i in tqdm(range(num_batches), desc="Batch"):
             batch = tokenizer(
-                dialogs[i*batch_size:(i+1) * batch_size], return_tensors="pt", 
+                dialogs[i*batch_size:(i+1)*batch_size], return_tensors="pt", 
                 padding=True).to('cuda')
 
             results = model.generate(
@@ -70,7 +80,7 @@ def main(
             batch_prompts = prompts[i*batch_size:(i+1) * batch_size]
             batch_prefixes = prefixes[i*batch_size:(i+1) * batch_size]
 
-            decoded_results = [tokenizer.decode(results[i]).split('Assistant: ', 1)[-1] for i in range(results.size()[0])]
+            decoded_results = [tokenizer.decode(results[i]).split('ASSISTANT: ', 1)[-1] for i in range(results.size()[0])]
             
             for (prompt, prefix, result) in zip(batch_prompts, batch_prefixes, decoded_results):
                 result = result.split("</s>")[0]
@@ -79,7 +89,8 @@ def main(
                 print("> " + result)
                 print("\n----------------------------------\n")
 
-                result = result.split(prefix)[1]
+                if len(prefix) > 0:
+                    result = result.split(prefix)[1]
 
                 writer.writerow([
                     prompt,
