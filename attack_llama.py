@@ -17,8 +17,8 @@ HELP_MSG = """Commands:
 - h: Print this help message.
 - i: Toggle interactive mode.
 - q: Quit.
-- r <file>: Read a CSV file of prompts and prefixes.
-- w <file>: Write to a CSV file (off by default).
+- r <FILE PATH>: Read a CSV file of prompts and prefixes.
+- w <FILE PATH>: Write to a CSV file (off by default).
 - w off: Stop writing to a CSV file.
 """
 
