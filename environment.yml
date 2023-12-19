@@ -1,4 +1,4 @@
-name: priming-attack
+name: llm-priming-attacks
 channels:
   - pytorch
   - anaconda
