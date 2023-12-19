@@ -1,2 +1,9 @@
+The statement below applies only to the following files:
+- attack_llama.py
+- few_shot_priming.py
+- generation_attack.py
+- lama_guard.py
+- llama_guard/prompt_format.py
+
 Llama 2 is licensed under the LLAMA 2 Community License, 
 Copyright (c) Meta Platforms, Inc. All Rights Reserved.
