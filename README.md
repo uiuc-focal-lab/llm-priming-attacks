@@ -1,5 +1,6 @@
 # LLM Priming Attacks
 
+This is the repository for our paper "Bypassing the Safety Training of Open-Source LLMs with Priming Attacks". You can also visit our project page at [http://llmpriming.focallab.org/](http://llmpriming.focallab.org/).
 
 ## Table of Contents
 1. [Installation](#installation)
