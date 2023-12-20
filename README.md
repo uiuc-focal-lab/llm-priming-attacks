@@ -33,6 +33,8 @@ To run few-shot priming attack generation, use the provided [few_shot_priming.py
         --batch_size 25 \
         --max_batch_size 25
 
+A guide for how many GPUs to use for each Llama model can be found [here](https://github.com/facebookresearch/llama#inference). For example, our work only uses the non-chat Llama 2 (7B) model, so only 1 GPU is needed.
+
 For reproducibility, the data used to produce the results in the paper can be found in [data/few_shot_priming](https://github.com/uiuc-focal-lab/llm-priming-attacks/tree/main/data/few_shot_priming):
 - [few_shot_examples.csv](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/data/few_shot_priming/few_shot_examples.csv): the few-shot examples used.
 - [few_shot_val.csv](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/data/few_shot_priming/few_shot_val.csv): validation set for tuning the few-shot prompt.
@@ -106,10 +108,10 @@ where
 [llama_guard.py](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/llama_guard.py) was also used for fine-tuning the Llama Guard prompt. To run the script in fine-tuning mode, simply exclude the `--write_file` option. The file specified by the `--read_file` option should include ground truth labels. The fine-tuning examples that were used can be found at [data/llama_guard_prompt_fine-tune/fine-tuning_examples.csv](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/data/llama_guard_prompt_fine-tune/fine-tuning_examples.csv). The validation set used can be found at [data/llama_guard_prompt_fine-tune/fine-tuning_val.csv](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/data/llama_guard_prompt_fine-tune/fine-tuning_val.csv). We also provide a `--view_wrong` option which can be used to view incorrect predictions; we set this to `False` during validation testing.
 
 Here are more specific details for which prompts were used during our fine-tuning (note: all numbers are file line numbers):
-- From Llama-2 (7b) priming attack outputs...
+- From Llama-2 (7B) priming attack outputs...
     - ...to few shot examples: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 27, 33, 35, 47, 58, 60, 65, 68, 83
     - ...to validation set: 138, 170, 175, 197, 209, 277, 310, 335, 337, 433
-- From Llama-2 (7b) "Just Sure" attack outputs...
+- From Llama-2 (7B) "Just Sure" attack outputs...
     - ...to few shot examples: 16, 18, 19, 20, 21
     - ...to validation set: 56, 75, 128, 192, 215, 217, 225, 294, 384, 421
 - Few-shot split:
@@ -117,7 +119,7 @@ Here are more specific details for which prompts were used during our fine-tunin
     - No: 15
 
 ## Manual Evaluation Data
-Manual evaluation data for Llama (7b) can be found in [data/manual_results](https://github.com/uiuc-focal-lab/llm-priming-attacks/tree/main/data/manual_results) using the same file naming convention as described in [Llama Guard Evaluation](#llama-guard-evaluation).
+Manual evaluation data for Llama (7B) can be found in [data/manual_results](https://github.com/uiuc-focal-lab/llm-priming-attacks/tree/main/data/manual_results) using the same file naming convention as described in [Llama Guard Evaluation](#llama-guard-evaluation).
 
 ## License
 The following files were created by modifying Llama source code materials (with varying degrees of modification) and are thus subject to the Llama 2 Community License Agreement:
