@@ -57,11 +57,10 @@ There are separate scripts for attacking Llama 2 and Vicuna. For attacking Llama
         --batch_size 25 \ 
         --max_batch_size 25
 
-This script launches an interactive tool with various commands for attacking Llama 2. It also includes an "interactive mode," which allows the user to alternate between manual priming and generation to carry out more complex attacks. To run an attack:
+This script launches a tool with various commands for attacking Llama 2. It also includes an "interactive mode," which allows the user to alternate between manual priming and generation to carry out more complex attacks (this is enabled by default). To run a non-interactive attack (i.e. what was used in our paper):
 1. Use the `i` command to turn off "interactive mode" so that the model outputs are completely stochastically generated.
 2. Use the `w <FILE PATH>` command to specify the file for writing the model outputs.
 3. Use the `r <FILE PATH>` command to read the priming attack file and start attacking.
-
 
 For attacking Vicuna, use [attack_vicuna.py](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/attack_vicuna.py). For example,
 
