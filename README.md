@@ -1,6 +1,6 @@
 # LLM Priming Attacks
 
-This is the repository for our paper "Bypassing the Safety Training of Open-Source LLMs with Priming Attacks." You can also visit our project page at [http://llmpriming.focallab.org/](http://llmpriming.focallab.org/).
+This is the repository for our paper ["Bypassing the Safety Training of Open-Source LLMs with Priming Attacks."](https://arxiv.org/abs/2312.12321) You can visit our project page at [http://llmpriming.focallab.org/](http://llmpriming.focallab.org/).
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -57,8 +57,8 @@ There are separate scripts for attacking Llama 2 and Vicuna. For attacking Llama
         --batch_size 25 \ 
         --max_batch_size 25
 
-This script launches an interactive tool with various commands for attacking Llama 2. It also includes an "interactive mode" which allows the user to step through the autoregressive generation for conducting manual priming attacks. To run an attack:
-1. Use the `i` command to turn off "interactive mode" so that the model outputs are stochastically generated.
+This script launches an interactive tool with various commands for attacking Llama 2. It also includes an "interactive mode," which allows the user to alternate between manual priming and generation to carry out more complex attacks. To run an attack:
+1. Use the `i` command to turn off "interactive mode" so that the model outputs are completely stochastically generated.
 2. Use the `w <FILE PATH>` command to specify the file for writing the model outputs.
 3. Use the `r <FILE PATH>` command to read the priming attack file and start attacking.
 
