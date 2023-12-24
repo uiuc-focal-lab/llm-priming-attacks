@@ -8,7 +8,9 @@ This is the repository for our paper ["Bypassing the Safety Training of Open-Sou
 3. [Running Priming Attacks](#running-priming-attacks)
 4. [Llama Guard Evaluation](#llama-guard-evaluation)
 5. [Manual Evaluation Data](#manual-evaluation-data)
-6. [License](#license)
+6. [Contributors](#contributors)
+7. [License](#license)
+8. [How to cite?](#how-to-cite)
 
 ## Installation
 We recommend first creating a conda envionronment using the provided [environment.yml](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/environment.yml):
@@ -120,6 +122,12 @@ Here are more specific details for which prompts were used during our fine-tunin
 ## Manual Evaluation Data
 Manual evaluation data for Llama (7B) can be found in [data/manual_results](https://github.com/uiuc-focal-lab/llm-priming-attacks/tree/main/data/manual_results) using the same file naming convention as described in [Llama Guard Evaluation](#llama-guard-evaluation).
 
+## Contributors
+- Jason Vega (lead contact) - javega3@illinois.edu
+- Isha Chaudhary - isha4@illinois.edu
+- Calvin Xu - cx23@illinois.edu
+- Gagandeep Singh - ggnds@illinois.edu
+
 ## License
 The following files were created by modifying Llama source code materials (with varying degrees of modification) and are thus subject to the Llama 2 Community License Agreement:
 - [attack_llama.py](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/attack_llama.py)
@@ -128,4 +136,17 @@ The following files were created by modifying Llama source code materials (with 
 - [lama_guard.py](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/llama_guard.py)
 - [llama_guard/prompt_format.py](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/llama_guard/prompt_format.py)
 
-Also see the statement in [notice.txt](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/notice.txt). All other files are original and subject to the licensing details found in [LICENSE](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/LICENSE).
+Also, see the statement in [notice.txt](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/notice.txt). All other files are original and subject to the licensing details found in [LICENSE](https://github.com/uiuc-focal-lab/llm-priming-attacks/blob/main/LICENSE).
+
+## How to cite?
+Thanks for your interest in our work. If you find it useful, please cite our paper as follows. 
+```
+@misc{vega2023bypassing,
+      title={Bypassing the Safety Training of Open-Source LLMs with Priming Attacks}, 
+      author={Jason Vega and Isha Chaudhary and Changming Xu and Gagandeep Singh},
+      year={2023},
+      eprint={2312.12321},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR}
+}
+```
